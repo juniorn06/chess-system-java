@@ -25,6 +25,12 @@ public class ChessMath {
         return mat;
     }
 
+    public boolean[][] possibleMoves(ChessPosition sourcePosition){ // indica os possíveis movimentos de uma peça,   e sua impressão na classe Program a partir de uma posição de origem.
+        Position position = sourcePosition.toPosition(); //Converte a posição de xadrez para posição de matriz.
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
+    }
+
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
